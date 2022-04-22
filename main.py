@@ -157,7 +157,7 @@ class GANMonitor(tf.keras.callbacks.Callback):
 
     # save checkpoint every 5 epochs
     def save_checkpoint(self, epoch):
-        if (epoch % 5) == 0:
+        if ((epoch + 1) % 5) == 0:
             checkpoint_dir = './training_checkpoints'
             checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
             checkpoint = tf.train.Checkpoint(generator_optimizer=self.model.g_optimizer,
